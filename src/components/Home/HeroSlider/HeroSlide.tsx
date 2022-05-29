@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction } from "react";
-import { useQuery } from "react-query";
 import { tmdbAPI } from "../../../api/tmdb";
 import { Category, Movie } from "../../../typing";
 import { BASE_IMG_URL } from "../../../utils/tmdbAPIConfig";
