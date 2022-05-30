@@ -17,6 +17,7 @@ function Videos({ id, category }: Props) {
     tmdbAPI.getVideos(category, id).then((data) => {
       setVideos(data.results);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <section className="my-5 px-2">

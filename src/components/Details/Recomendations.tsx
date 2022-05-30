@@ -11,6 +11,7 @@ function Recomendations({ category, id }: Props) {
     tmdbAPI.similar(category, id).then((data) => {
       setContents(data.results);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <section>

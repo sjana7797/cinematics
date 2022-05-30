@@ -13,11 +13,13 @@ function Castlist({ id, category }: Props) {
     tmdbAPI.credits(category, `${id}`).then((data) => {
       setList(data.cast.slice(0, 4));
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="flex space-x-2">
       {list.map((cast) => (
         <div key={cast.id}>
+          {/* eslint-disable-next-line jsx-a11y/alt-text */}
           <img
             className="lazyload h-[160px] rounded-xl object-cover"
             data-src={BASE_IMG_URL.w500(cast.profile_path)}
