@@ -12,7 +12,6 @@ function Header() {
         document.body.scrollTop > 100 ||
         document.documentElement.scrollTop > 100
       ) {
-        console.log("hi");
         if (headerRef.current) {
           headerRef.current.classList.add("shrink-header");
         }

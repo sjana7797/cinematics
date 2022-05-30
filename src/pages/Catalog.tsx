@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { tmdbAPI } from "../../api/tmdb";
-import { Category, Content, MovieType, TVType } from "../../typing";
-import Loading from "../Loading";
-import ContentGrid from "./ContentGrid";
-import Pageheader from "./Pageheader";
-import SearchText from "./SearchText";
+import { tmdbAPI } from "../api/tmdb";
+import ContentGrid from "../components/Catalog/ContentGrid";
+import Pageheader from "../components/Catalog/Pageheader";
+import SearchText from "../components/Catalog/SearchText";
+import Loading from "../components/Loading";
+import { Category, Content, MovieType, TVType } from "../typing";
 
 function Catalog() {
   const { category } = useParams();
@@ -56,7 +56,6 @@ function Catalog() {
       getTv();
     }
   }, [category]);
-
   return (
     <>
       <Pageheader title={getCategory} />

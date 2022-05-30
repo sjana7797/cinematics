@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import Catalog from "../components/Catalog";
+import Catalog from "../pages/Catalog";
+import Details from "../pages/Details";
 import Home from "../pages/Home";
 
 function RoutesPage() {
@@ -8,6 +9,7 @@ function RoutesPage() {
       <Route path="/" element={<Home />} />
       <Route path="/:category" element={<Catalog />} />
       <Route path="/:category/search/:keyword" element={<Catalog />} />
+      <Route path="/:category/:id" element={<Details />} />
     </Routes>
   );
 }
