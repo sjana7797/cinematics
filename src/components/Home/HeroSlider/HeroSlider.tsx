@@ -1,4 +1,4 @@
-import { Movie } from "../../../typing";
+import { Content } from "../../../typing";
 import "swiper/css";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -6,7 +6,7 @@ import HeroSlide from "./HeroSlide";
 import { useState } from "react";
 import TrailerModal from "./TrailerModal";
 
-type Props = { movies: Movie[] };
+type Props = { movies: Content[] };
 
 function HeroSlider({ movies }: Props) {
   SwiperCore.use([Autoplay]);

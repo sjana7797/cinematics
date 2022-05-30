@@ -1,12 +1,13 @@
 import { useQuery } from "react-query";
 import HeroSlider from "../components/Home/HeroSlider/HeroSlider";
 import { tmdbAPI } from "../api/tmdb";
-import { Movie, MovieType, TVType } from "../typing";
+import { Content, MovieType, TVType } from "../typing";
 import Contents from "../components/Home/Contents";
+import Loading from "../components/Loading";
 
 function Home() {
   const params = { page: 1 };
-  const popularMovies = useQuery<{ page: Number; results: Movie[] }, Error>(
+  const popularMovies = useQuery<{ page: Number; results: Content[] }, Error>(
     ["popular_movie"],
     async () => {
       const movies = await tmdbAPI.getMovieList(MovieType.popular, {
@@ -15,14 +16,14 @@ function Home() {
       return movies;
     }
   );
-  const trending = useQuery<{ page: Number; results: Movie[] }, Error>(
+  const trending = useQuery<{ page: Number; results: Content[] }, Error>(
     ["trending"],
     async () => {
       const trending = await tmdbAPI.getTrending();
       return trending;
     }
   );
-  const topRatedMovies = useQuery<{ page: Number; results: Movie[] }, Error>(
+  const topRatedMovies = useQuery<{ page: Number; results: Content[] }, Error>(
     ["top_rated_movie"],
     async () => {
       const movies = await tmdbAPI.getMovieList(MovieType.top_rated, {
@@ -31,7 +32,7 @@ function Home() {
       return movies;
     }
   );
-  const topRatedTV = useQuery<{ page: Number; results: Movie[] }, Error>(
+  const topRatedTV = useQuery<{ page: Number; results: Content[] }, Error>(
     "top_rated_tv",
     async () => {
       const tvs = await tmdbAPI.getTVList(TVType.top_rated, {
@@ -40,7 +41,7 @@ function Home() {
       return tvs;
     }
   );
-  const popularTV = useQuery<{ page: Number; results: Movie[] }, Error>(
+  const popularTV = useQuery<{ page: Number; results: Content[] }, Error>(
     "popular_tv",
     async () => {
       const tvs = await tmdbAPI.getTVList(TVType.popular, {
@@ -59,7 +60,7 @@ function Home() {
   };
 
   const showHeroSlide = () => {
-    if (popularMovies.isLoading) return <div>loading</div>;
+    if (popularMovies.isLoading) return <Loading />;
     if (popularMovies.data)
       return <HeroSlider movies={popularMovies.data.results.slice(0, 5)} />;
   };

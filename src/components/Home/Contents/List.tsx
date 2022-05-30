@@ -1,8 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Category, Movie } from "../../../typing";
+import { Category, Content } from "../../../typing";
 import Card from "./Card";
 
-type Props = { contents: Movie[] | undefined; category: Category };
+type Props = { contents: Content[] | undefined; category: Category };
 function List({ contents, category }: Props) {
   return (
     <div className="content-list">

@@ -3,7 +3,7 @@ import { Category, MovieType, TVType } from "../typing";
 
 const tmdbAPI = {
   getTrending: () => {
-    const url = `trending/movie/week`;
+    const url = `trending/all/week`;
     return tmdbAxios.get(url, { params: {} }).then((response) => response.data);
   },
   getMovieList: (type: MovieType, params: Object) => {

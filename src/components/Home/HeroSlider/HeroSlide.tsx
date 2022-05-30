@@ -1,10 +1,10 @@
 import { Dispatch, SetStateAction } from "react";
 import { tmdbAPI } from "../../../api/tmdb";
-import { Category, Movie } from "../../../typing";
+import { Category, Content } from "../../../typing";
 import { BASE_IMG_URL } from "../../../utils/tmdbAPIConfig";
 
 type Props = {
-  movie: Movie;
+  movie: Content;
   isActive: boolean;
   openModal: Dispatch<SetStateAction<boolean>>;
   setUrl: Dispatch<SetStateAction<string>>;
@@ -22,7 +22,6 @@ function HeroSlide({ movie, isActive, openModal, setUrl }: Props) {
       className="relative w-full bg-cover bg-center bg-no-repeat py-24 px-2 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-black/60 before:content-[''] after:absolute after:bottom-0 after:left-0 after:h-24 after:w-full after:bg-gradient-to-t after:from-dark after:to-black/0 after:content-[''] md:px-10"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
-      {" "}
       <div className="relative flex items-center justify-center">
         <div className="relative w-full py-8 md:w-[55%]">
           <h2

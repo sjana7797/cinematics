@@ -1,20 +1,20 @@
-import { Category, Movie } from "../../../typing";
+import { Category, Content } from "../../../typing";
 import ContentContainer from "./ContentContainer";
 
 type Props = {
   contents: {
-    popularMovies: Movie[] | undefined;
-    topRatedMovies: Movie[] | undefined;
-    topRatedTV: Movie[] | undefined;
-    trending: Movie[] | undefined;
-    popularTV: Movie[] | undefined;
+    popularMovies: Content[] | undefined;
+    topRatedMovies: Content[] | undefined;
+    topRatedTV: Content[] | undefined;
+    trending: Content[] | undefined;
+    popularTV: Content[] | undefined;
   };
 };
 function Contents({ contents }: Props) {
   return (
     <section className="container mt-10 space-y-10 md:mt-20">
       <ContentContainer
-        title="Trending Movies"
+        title="Trending"
         contents={contents.trending}
         category={Category.movie}
       />

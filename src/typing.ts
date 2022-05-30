@@ -30,3 +30,15 @@ export interface Movie {
   vote_average: Number;
   vote_count: Number;
 }
+
+export interface Content {
+  backdrop_path: string;
+  id: Number;
+  original_title?: string;
+  overview: string;
+  title?: string;
+  poster_path: string;
+  name?: string;
+  original_name?: string;
+  media_type?: Category;
+}

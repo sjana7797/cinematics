@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { Category, Movie } from "../../../typing";
+import { Category, Content } from "../../../typing";
 import List from "./List";
 
 type Props = {
   title: string;
-  contents: Movie[] | undefined;
+  contents: Content[] | undefined;
   category: Category;
 };
 function ContentContainer({ title, contents, category }: Props) {
