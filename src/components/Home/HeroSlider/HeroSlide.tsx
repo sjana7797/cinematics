@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
+import { Link } from "react-router-dom";
 import { tmdbAPI } from "../../../api/tmdb";
 import { Category, Content } from "../../../typing";
 import { BASE_IMG_URL } from "../../../utils/tmdbAPIConfig";
@@ -43,9 +44,11 @@ function HeroSlide({ movie, isActive, openModal, setUrl }: Props) {
               isActive && "!translate-y-0 !opacity-100 !delay-[0.9s,0.9s]"
             }`}
           >
-            <button className="btn btn-primary mx-4 my-2 font-semibold hover:shadow-[0_0_7px_15px] md:my-0">
-              Watch now
-            </button>
+            <Link to={`/movie/${id}`}>
+              <button className="btn btn-primary mx-4 my-2 font-semibold hover:shadow-[0_0_7px_15px] md:my-0">
+                Watch now
+              </button>
+            </Link>
             <button
               className="btn btn-outline mx-4 my-2 md:my-0"
               onClick={async () => {

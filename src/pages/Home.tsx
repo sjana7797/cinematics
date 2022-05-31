@@ -3,7 +3,7 @@ import HeroSlider from "../components/Home/HeroSlider/HeroSlider";
 import { tmdbAPI } from "../api/tmdb";
 import { Content, MovieType, TVType } from "../typing";
 import Contents from "../components/Home/Contents";
-import Loading from "../components/Loading";
+import HeroSkeleton from "../components/Home/HeroSlider/HeroSkeleton";
 
 function Home() {
   const params = { page: 1 };
@@ -60,7 +60,7 @@ function Home() {
   };
 
   const showHeroSlide = () => {
-    if (popularMovies.isLoading) return <Loading />;
+    if (popularMovies.isLoading) return <HeroSkeleton />;
     if (popularMovies.data)
       return <HeroSlider movies={popularMovies.data.results.slice(0, 5)} />;
   };

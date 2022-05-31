@@ -13,5 +13,5 @@ module.exports = {
   daisyui: {
     themes: ["forest"],
   },
-  plugins: [require("daisyui")],
+  plugins: [require("tailwind-scrollbar-hide"), require("daisyui")],
 };

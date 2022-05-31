@@ -26,7 +26,7 @@ function Card({ category, content }: Props) {
             className="lazyload transition-transform duration-300 group-hover:scale-110"
             data-src={poster}
             alt={content_name}
-            src="https://via.placeholder.com/500/FFFFFF/000000"
+            src="https://via.placeholder.com/500x700/FFFFFF/000000"
           />
         </div>
         <h2 className="text-lg font-semibold text-white underline-offset-2 group-hover:underline">

@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { tmdbAPI } from "../api/tmdb";
 import ContentGrid from "../components/Catalog/ContentGrid";
+import ContentGridSkelton from "../components/Catalog/ContentGridSkelton";
 import Pageheader from "../components/Catalog/Pageheader";
 import SearchText from "../components/Catalog/SearchText";
-import Loading from "../components/Loading";
 import { Category, Content, MovieType, TVType } from "../typing";
 
 function Catalog() {
@@ -61,7 +61,7 @@ function Catalog() {
       <Pageheader title={getCategory} />
       <SearchText />
       {loading ? (
-        <Loading />
+        <ContentGridSkelton />
       ) : (
         <ContentGrid
           category={cate}

@@ -12,7 +12,7 @@ type Props = {
 };
 function Contents({ contents }: Props) {
   return (
-    <section className="container mt-10 space-y-10 md:mt-20">
+    <section className="mt-10 space-y-10 md:mt-20">
       <ContentContainer
         title="Trending"
         contents={contents.trending}

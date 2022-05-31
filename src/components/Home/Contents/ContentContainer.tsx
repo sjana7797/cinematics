@@ -9,7 +9,7 @@ type Props = {
 };
 function ContentContainer({ title, contents, category }: Props) {
   return (
-    <div className="flex flex-col space-y-10 px-5">
+    <div className="flex w-full flex-col space-y-10 px-5">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-bold text-base-content md:text-xl lg:text-3xl">
           {title}
